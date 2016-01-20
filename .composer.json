@@ -1,0 +1,24 @@
+
+{
+  "name": "it-blaster/single-config-bundle",
+  "description": "Symfony2 single-config bundle",
+  "type": "symfony-bundle",
+  "keywords": ["config"],
+  "homepage": "https://github.com/it-blaster/single-config-bundle",
+  "license" : "MIT",
+  "authors": [
+    {
+      "name": "IT-Blaster",
+      "email": "it-blaster@yandex.ru"
+    }
+  ],
+  "require": {
+    "symfony/symfony": ">=2.2",
+    "propel/propel-bundle": ">=1.4"
+  },
+  "autoload": {
+    "psr-0": { "ItBlaster\\SingleConfigBundle": "" }
+  },
+  "minimum-stability": "dev",
+  "target-dir": "ItBlaster/SingleConfigBundle"
+}
