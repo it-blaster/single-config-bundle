@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="en" datatype="plaintext" original="">
+        <body>
+
+            <trans-unit id="it_blaster_config_item_label">
+                <source>it_blaster_config_item_label</source>
+                <target>Настройки</target>
+            </trans-unit>
+
+            <trans-unit id="it_blaster_config_form_name">
+                <source>it_blaster_config_form_name</source>
+                <target>Настройка</target>
+            </trans-unit>
+
+            <trans-unit id="it_blaster_config_form_title">
+                <source>it_blaster_config_form_title</source>
+                <target>Наименование</target>
+            </trans-unit>
+
+            <trans-unit id="it_blaster_config_form_value">
+                <source>it_blaster_config_form_value</source>
+                <target>Значение</target>
+            </trans-unit>
+
+            <trans-unit id="it_blaster_config_form_edit">
+                <source>it_blaster_config_form_edit</source>
+                <target>Редактировать</target>
+            </trans-unit>
+
+            <trans-unit id="it_blaster_config_config_list">
+                <source>Config List</source>
+                <target>Настройки</target>
+            </trans-unit>
+
+        </body>
+    </file>
+</xliff>

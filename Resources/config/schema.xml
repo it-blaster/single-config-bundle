@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<database
+        name="default"
+        defaultIdMethod="native"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="http://xsd.propelorm.org/1.7/database.xsd"
+        namespace="ItBlaster\SingleConfigBundle\Model">
+
+    <table name="config" description="Config">
+        <column name="id"       type="integer"   required="true" primaryKey="true" autoIncrement="true"  />
+        <column name="name"     type="varchar" />
+        <column name="title"    type="varchar" />
+        <column name="value"    type="longvarchar" />
+        <column name="data"     type="longvarchar" />
+    </table>
+</database>
