@@ -6,7 +6,7 @@ services:
         class: ItBlaster\SingleConfigBundle\Admin\ConfigAdmin
         arguments: [~, ItBlaster\SingleConfigBundle\Model\Config, SonataAdminBundle:CRUD]
         tags:
-            - {name: sonata.admin, manager_type: propel, group: Администрирование, label: Администрирование}
+            - {name: sonata.admin, manager_type: propel, group: cms.administration, label: Настройки}
 
     it_blaster_config.twig_extension:
         class: ItBlaster\SingleConfigBundle\Twig\ItBlasterSingleConfigExtension
