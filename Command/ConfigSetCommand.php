@@ -54,6 +54,8 @@ class ConfigSetCommand extends ContainerAwareCommand
             die();
         }
 
+        Config::set($config_name, $config_value);
+        $this->log('<info>Success</info>');
 
     }
 

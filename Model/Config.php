@@ -32,7 +32,7 @@ class Config extends BaseConfig
             }
         }
 
-        return isset(self::$data[$config_name]) && self::$data[$config_name]['value'] ?
+        return isset(self::$data[$config_name]) && self::$data[$config_name] ?
             self::$data[$config_name] :
             false;
     }
