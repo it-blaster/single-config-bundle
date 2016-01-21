@@ -16,7 +16,7 @@ class Config extends BaseConfig
     {
         if(self::$data === null) {
             $con = \Propel::getConnection();
-            $query = 'SELECT c.name, c.value, c.data FROM config';
+            $query = 'SELECT name, value FROM config';
             $stmt = $con->prepare($query);
             $stmt->execute();
             $result = $stmt->fetchAll();
