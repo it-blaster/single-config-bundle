@@ -13,6 +13,16 @@ class Config extends BaseConfig
     public static $data;
 
     /**
+     * Строковое значение
+     *
+     * @return string
+     */
+    public function __toString()
+    {
+        return (string)$this->getValue();
+    }
+
+    /**
      * Возвращает значение конфига по алиасу
      *
      * @param $config_name
