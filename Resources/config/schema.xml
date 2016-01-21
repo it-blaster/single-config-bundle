@@ -11,6 +11,5 @@
         <column name="name"     type="varchar" />
         <column name="title"    type="varchar" />
         <column name="value"    type="longvarchar" />
-        <column name="data"     type="longvarchar" />
     </table>
 </database>

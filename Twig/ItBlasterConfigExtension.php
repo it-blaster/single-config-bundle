@@ -21,12 +21,11 @@ class ItBlasterSingleConfigExtension extends \Twig_Extension
 
     /**
      * @param string $setting
-     * @param null|string $locale
      * @return bool|string
      */
-    public function configValue($setting, $locale = null)
+    public function configValue($setting)
     {
-        return Config::get($setting, $locale);
+        return Config::get($setting);
     }
 
     /**
