@@ -28,9 +28,10 @@ class ConfigGetCommand extends ContainerAwareCommand
     protected function configure()
     {
         $this
-            ->setName('config:get')
-            ->setDescription('return config value')
+            ->setName('config:set')
+            ->setDescription('set config')
             ->addArgument('config_name', InputArgument::OPTIONAL, "Config name")
+            ->addArgument('config_value', InputArgument::OPTIONAL, "Config value")
         ;
 
     }
@@ -41,18 +42,19 @@ class ConfigGetCommand extends ContainerAwareCommand
         $this->output = $output;
 
         $config_name = $input->getArgument('config_name');
+        $config_value = $input->getArgument('config_value');
+
         if (!$config_name) {
             $this->log('Укажите имя конфига');
             die();
         }
 
-        $config = Config::get($config_name);
-        if (!$config) {
-            $this->log('Конфиг по указанному имени не найден');
+        if (!$config_value) {
+            $this->log('Укажите значение конфига');
             die();
         }
 
-        $this->log($config);
+
     }
 
 }
