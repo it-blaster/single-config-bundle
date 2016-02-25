@@ -83,6 +83,7 @@ class ConfigAdmin extends Admin
             ])
             ->add('Value', 'textarea', [
                 'label' => 'Значение',
+                'required'  =>  false
             ])
         ;
     }
