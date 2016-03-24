@@ -43,13 +43,13 @@ class ConfigGetCommand extends ContainerAwareCommand
         $config_name = $input->getArgument('config_name');
         if (!$config_name) {
             $this->log('Укажите имя конфига');
-            die();
+            return;
         }
 
-        $config = Config::get($config_name);
-        if (!$config) {
+        $config = $this->getContainer()->get('it_blaster_single_config.service')->get($config_name);
+        if ($config === null) {
             $this->log('Конфиг по указанному имени не найден');
-            die();
+            return;
         }
 
         $this->log($config);

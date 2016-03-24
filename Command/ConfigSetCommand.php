@@ -46,15 +46,15 @@ class ConfigSetCommand extends ContainerAwareCommand
 
         if (!$config_name) {
             $this->log('Укажите имя конфига');
-            die();
+            return;
         }
 
         if (!$config_value) {
             $this->log('Укажите значение конфига');
-            die();
+            return;
         }
 
-        Config::set($config_name, $config_value);
+        $this->getContainer()->get('it_blaster_single_config.service')->set($config_name, $config_value);
         $this->log('<info>Success</info>');
 
     }

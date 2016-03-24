@@ -2,6 +2,7 @@
 namespace ItBlaster\SingleConfigBundle\Twig;
 
 use ItBlaster\SingleConfigBundle\Model\Config;
+use ItBlaster\SingleConfigBundle\Service\ConfigService;
 
 /**
  * Class ItBlasterSingleConfigExtension
@@ -9,6 +10,19 @@ use ItBlaster\SingleConfigBundle\Model\Config;
  */
 class ItBlasterSingleConfigExtension extends \Twig_Extension
 {
+    /** @var ConfigService  */
+    private $config;
+
+    /**
+     * ItBlasterSingleConfigExtension constructor.
+     *
+     * @param ConfigService $config
+     */
+    public function __construct($config)
+    {
+        $this->config = $config;
+    }
+
     /**
      * @return array
      */
@@ -20,12 +34,14 @@ class ItBlasterSingleConfigExtension extends \Twig_Extension
     }
 
     /**
-     * @param string $setting
-     * @return bool|string
+     * @param      $name
+     * @param null $default
+     *
+     * @return mixed
      */
-    public function configValue($setting)
+    public function configValue($name, $default = null)
     {
-        return Config::get($setting);
+        return $this->config->get($name, $default);
     }
 
     /**

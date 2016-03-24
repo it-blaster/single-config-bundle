@@ -2,13 +2,18 @@ parameters:
 #    it_blaster_config.example.class: ItBlaster\SingleConfigBundle\Example
 
 services:
-    it_blaster_single_config.admin.config:
+    it_blaster_single_config.admin:
         class: ItBlaster\SingleConfigBundle\Admin\ConfigAdmin
         arguments: [~, ItBlaster\SingleConfigBundle\Model\Config, SonataAdminBundle:CRUD]
         tags:
             - {name: sonata.admin, manager_type: propel, group: cms.administration, label: Настройки}
 
-    it_blaster_config.twig_extension:
+    it_blaster_single_config.twig_extension:
         class: ItBlaster\SingleConfigBundle\Twig\ItBlasterSingleConfigExtension
+        arguments: [@it_blaster_single_config.service]
         tags:
             - { name: twig.extension }
+
+    it_blaster_single_config.service:
+        class: ItBlaster\SingleConfigBundle\Service\ConfigService
+        arguments: [@doctrine.orm.entity_manager]

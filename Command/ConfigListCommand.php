@@ -41,13 +41,10 @@ class ConfigListCommand extends ContainerAwareCommand
         /** @var ConsoleOutput $output */
         $this->output = $output;
 
-        $config_list = ConfigQuery::create()
-            ->orderByTitle()
-            ->find();
+        $service = $this->getContainer()->get('it_blaster_single_config.service');
 
-        foreach ($config_list as $config) {
-            /** @var Config $config */
-            $this->log('<info>'.$config->getName().'</info><comment>: '.$config->getValue().'</comment>');
+        foreach ($service->get() as $name => $value) {
+            $this->log('<info>'.$name.'</info><comment>: '.$value.'</comment>');
         }
     }
 
