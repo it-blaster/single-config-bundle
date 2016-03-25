@@ -34,8 +34,8 @@ class ConfigAdmin extends Admin
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
         $datagridMapper
-            ->add('Name')
-            ->add('Title')
+            ->add('name')
+            ->add('title')
         ;
     }
 
@@ -45,16 +45,16 @@ class ConfigAdmin extends Admin
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper
-            ->add('Id')
-            ->addIdentifier('Name', null, array(
+            ->add('id')
+            ->addIdentifier('name', null, array(
                 'label' => 'Alias',
                 'sortable' => true,
             ))
-            ->addIdentifier('Title', null, array(
+            ->addIdentifier('title', null, array(
                 'label' => 'Название',
                 'sortable' => true,
             ))
-            ->add('Value', null, array(
+            ->add('value', null, array(
                 'label' => 'Значение',
                 'sortable' => false,
             ))
@@ -73,15 +73,17 @@ class ConfigAdmin extends Admin
      */
     protected function configureFormFields(FormMapper $formMapper)
     {
+        $em = $this->getConfigurationPool()->getContainer()->get('doctrine')->getManager();
+
         $formMapper
-            ->add('Name', null, [
+            ->add('name', null, [
                 'label' => 'Alias',
-                'read_only' => !$this->getSubject()->isNew(),
+                'read_only' => !$em->contains($this->getSubject()),
             ])
-            ->add('Title', null, [
+            ->add('title', null, [
                 'label' => 'Название',
             ])
-            ->add('Value', 'textarea', [
+            ->add('value', 'textarea', [
                 'label' => 'Значение',
                 'required'  =>  false
             ])
