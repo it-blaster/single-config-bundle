@@ -78,7 +78,7 @@ class ConfigAdmin extends Admin
         $formMapper
             ->add('name', null, [
                 'label' => 'Alias',
-                'read_only' => !$em->contains($this->getSubject()),
+                'read_only' => $em->contains($this->getSubject()),
             ])
             ->add('title', null, [
                 'label' => 'Название',
