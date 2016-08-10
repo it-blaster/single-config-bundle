@@ -10,10 +10,10 @@ services:
 
     it_blaster_single_config.twig_extension:
         class: ItBlaster\SingleConfigBundle\Twig\ItBlasterSingleConfigExtension
-        arguments: [@it_blaster_single_config.service]
+        arguments: ['@it_blaster_single_config.service']
         tags:
             - { name: twig.extension }
 
     it_blaster_single_config.service:
         class: ItBlaster\SingleConfigBundle\Service\ConfigService
-        arguments: [@doctrine.orm.entity_manager]
+        arguments: ['@doctrine.orm.entity_manager']
