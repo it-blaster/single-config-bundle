@@ -19,13 +19,13 @@ class ConfigAdmin extends Admin
      * @var array
      */
     protected $datagridValues = array(
-        '_per_page'   => 100,
+        '_per_page'   => 200,
         '_sort_order' => 'ASC',
         '_sort_by' => 'Name'
     );
 
-    protected $perPageOptions = array(20, 50, 100, 500);
-    protected $maxPerPage = 100;
+    protected $perPageOptions = array(200, 250, 300, 500);
+    protected $maxPerPage = 200;
     protected $maxPageLinks = 1000;
 
     /**
